@@ -45,6 +45,10 @@
       emacs
       lazygit
       btop
+      ripgrep
+      fd
+      uv
+
 #       nvtop
     ];
   };
