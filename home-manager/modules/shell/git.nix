@@ -64,8 +64,9 @@
     };
   };
 
-  programs.lazygit = {
+   programs.lazygit = {
     enable = true;
+#     catppuccin.enable = true;
 
     settings = {
       gui = {
@@ -78,6 +79,18 @@
           colorArg = "always";
           pager = "delta --dark --paging=never";
         };
+        # ADDED: New pagers array format (migration requirement)
+        pagers = [
+          {
+            diff = "delta --dark --paging=never";
+          }
+          {
+            log = "delta --dark --paging=never";
+          }
+          {
+            show = "delta --dark --paging=never";
+          }
+        ];
         commit.signOff = false;
         autoFetch = true;
         autoRefresh = true;
