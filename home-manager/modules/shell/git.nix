@@ -1,12 +1,14 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   programs.git = {
     enable = true;
-    userName = "rahulbabu7";
-    userEmail = "rahulbabu436@gmail.com";
 
-    extraConfig = {
+    # Updated: new option names
+    settings = {
+      user.name = "rahulbabu7";
+      user.email = "rahulbabu436@gmail.com";
+
       init.defaultBranch = "main";
       core = {
         editor = "emacsclient -c -a emacs";
@@ -27,24 +29,7 @@
       help.autocorrect = 1;
     };
 
-    delta = {
-      enable = true;
-      options = {
-        navigate = true;
-        light = false;
-        side-by-side = true;
-        line-numbers = true;
-        syntax-theme = "Catppuccin-mocha";
-        features = "decorations";
-        decorations = {
-          commit-decoration-style = "bold yellow box ul";
-          file-style = "bold yellow ul";
-          file-decoration-style = "none";
-          hunk-header-decoration-style = "cyan box ul";
-        };
-      };
-    };
-
+    # Ignores remain the same
     ignores = [
       ".DS_Store" "Thumbs.db" "*~" "*.swp" "*.swo"
       ".vscode/" ".zed" ".idea/" "*.code-workspace"
@@ -53,6 +38,30 @@
       "*.log" "npm-debug.log*"
       ".direnv/"
     ];
+  };
+
+  # Delta is now a top-level program
+  programs.delta = {
+    enable = true;
+    enableGitIntegration = true;   # Must be explicit now
+
+    options = {
+      navigate = true;
+      light = false;
+      side-by-side = true;
+      line-numbers = true;
+      syntax-theme = "Catppuccin-mocha";
+
+      # Force your preferred features
+      features = lib.mkForce "decorations";
+
+      decorations = {
+        commit-decoration-style = "bold yellow box ul";
+        file-style = "bold yellow ul";
+        file-decoration-style = "none";
+        hunk-header-decoration-style = "cyan box ul";
+      };
+    };
   };
 
   programs.lazygit = {
@@ -81,3 +90,4 @@
     };
   };
 }
+

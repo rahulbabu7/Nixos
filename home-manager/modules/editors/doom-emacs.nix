@@ -3,7 +3,7 @@
 {
   programs.emacs = {
     enable = true;
-    package = pkgs.emacs29-pgtk;
+    package = pkgs.emacs30-pgtk;
     extraPackages = epkgs: with epkgs; [
       vterm
       pdf-tools
@@ -15,7 +15,7 @@
     git ripgrep fd xclip
     (aspellWithDicts (dicts: with dicts; [ en en-computers en-science ]))
     nil
-    nodePackages.pyright
+    pyright
     nodePackages.typescript-language-server
     nodePackages.bash-language-server
     nodePackages.vscode-langservers-extracted

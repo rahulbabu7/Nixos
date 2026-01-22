@@ -54,11 +54,12 @@
       # swaylock
 
       # Fonts
-      (nerdfonts.override { fonts = [ "JetBrainsMono" "FiraCode" ]; })
+      nerd-fonts.jetbrains-mono
+      nerd-fonts.fira-code
       noto-fonts
-      noto-fonts-emoji
+      noto-fonts-color-emoji
       lilex
-      liberation-ttf
+      liberation_ttf
       font-awesome
     ];
 
