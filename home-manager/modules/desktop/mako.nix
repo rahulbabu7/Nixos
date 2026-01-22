@@ -3,14 +3,17 @@
 {
   services.mako = {
     enable = true;
-    # catppuccin.enable = true;
-    defaultTimeout = 5000;
-    groupBy = "app-name";
-    maxVisible = 5;
-    anchor = "top-right";
-    borderRadius = 10;
-    borderSize = 2;
-    padding = "12";
-    margin = "12";
+
+    # Updated format - all options go inside 'settings'
+    settings = {
+      default-timeout = 5000;        # was: defaultTimeout
+      group-by = "app-name";         # was: groupBy
+      max-visible = 5;               # was: maxVisible
+      anchor = "top-right";          # was: anchor
+      border-radius = 10;            # was: borderRadius
+      border-size = 2;               # was: borderSize
+      padding = "12";                # was: padding
+      margin = "12";                 # was: margin
+    };
   };
 }
