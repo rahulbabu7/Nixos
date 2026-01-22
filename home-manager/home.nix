@@ -33,6 +33,7 @@
       nano
       stow
 
+      cifs-utils
       # Development
       python313
       nodejs_24
