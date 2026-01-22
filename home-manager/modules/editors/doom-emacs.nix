@@ -12,7 +12,7 @@
   };
 
   home.packages = with pkgs; [
-    git ripgrep fd xclip
+    git ripgrep fd 
     (aspellWithDicts (dicts: with dicts; [ en en-computers en-science ]))
     nil
     pyright
