@@ -2,34 +2,22 @@
 { config, pkgs, ... }:
 
 {
-  # Niri compositor
-#   programs.niri.enable = true;
-  #programs.waybar.enable = true;
-
-  # Enable Plasma 6 (current default)
-  services.desktopManager.plasma6.enable = true;
-
-  # Display manager (recommended for KDE)
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true; # KDE Wayland session
-  };
+  # Niri Wayland compositor
+  programs.niri.enable = true;
 
   # Display manager
-#   services.displayManager.ly.enable = true;
+  services.displayManager.ly.enable = true;
 
   # Touchpad support
   services.libinput.enable = true;
 
   # XDG portals for Wayland
-#   xdg.portal = {
-#     enable = true;
-#     extraPortals = with pkgs; [
-# #       xdg-desktop-portal-gtk
-# #       xdg-desktop-portal-gnome
-#        xdg-desktop-portal-kde
-#     ];
-#   };
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+    ];
+  };
 
   # Graphics
   hardware.graphics = {
@@ -37,14 +25,10 @@
     enable32Bit = true;
   };
 
-  # DBus (required for desktop environments)
+  # DBus (required for Wayland sessions)
   services.dbus.enable = true;
 
-  # # Fonts
-  # fonts.packages = with pkgs; [
-  #   noto-fonts
-  #   noto-fonts-color-emoji
-  #   liberation_ttf
-  #   fira-code
-  # ];
+  # Required by Noctalia shell
+  services.upower.enable = true;
+  services.power-profiles-daemon.enable = true;
 }
