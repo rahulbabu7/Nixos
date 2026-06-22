@@ -1,6 +1,7 @@
 { pkgs, ... }:
 
 {
+  # Emacs needs system-level setup for vterm/pdf-tools to build correctly
   programs.emacs = {
     enable = true;
     package = pkgs.emacs30-pgtk;
@@ -10,29 +11,13 @@
     ];
   };
 
+  # True system-level tools — available to all users and root
   environment.systemPackages = with pkgs; [
-    # System utilities
-    fastfetch
-    btop
-    nano
-    stow
-    cifs-utils
-
-    # Development
-    python313
-    nodejs_24
-    uv
     ripgrep
     fd
-    lazygit
-    git
+    nano
 
-    # Editors & terminals
-    kitty
-    tmux
-    unstable.zed-editor
-
-    # LSP & language tools (used by Emacs / Zed)
+    # LSP & language tools (used by Emacs at system level)
     nil
     pyright
     nixpkgs-fmt
@@ -48,6 +33,26 @@
     nodePackages.prettier
     nodePackages.eslint
     nodePackages.js-beautify
+  ];
+
+  # Personal packages — only for rahul
+  users.users.rahul.packages = with pkgs; [
+    # System utilities
+    fastfetch
+    btop
+    stow
+    cifs-utils
+    lazygit
+
+    # Development
+    python313
+    nodejs_24
+    uv
+
+    # Editors & terminals
+    kitty
+    tmux
+    unstable.zed-editor
 
     # Wayland / screenshot tools
     wl-clipboard
