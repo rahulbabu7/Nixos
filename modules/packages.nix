@@ -11,13 +11,14 @@
     ];
   };
 
-  # True system-level tools — available to all users and root
-  environment.systemPackages = with pkgs; [
+  # Personal packages — only for rahul
+  users.users.rahul.packages = with pkgs; [
+    # Basic tools
+    nano
     ripgrep
     fd
-    nano
 
-    # LSP & language tools (used by Emacs at system level)
+    # LSP & language tools (used by Emacs / Zed)
     nil
     pyright
     nixpkgs-fmt
@@ -33,10 +34,6 @@
     nodePackages.prettier
     nodePackages.eslint
     nodePackages.js-beautify
-  ];
-
-  # Personal packages — only for rahul
-  users.users.rahul.packages = with pkgs; [
     # System utilities
     fastfetch
     btop
