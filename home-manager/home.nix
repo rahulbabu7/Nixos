@@ -1,24 +1,13 @@
-{
-  config,
-  pkgs,
-  nixpkgs-unstable,
-  ...
-}:
+{ config, pkgs, ... }:
 
 {
   imports = [
     ./modules/shell/bash.nix
     ./modules/shell/git.nix
-    ./modules/editors/doom-emacs.nix
     ./modules/editors/zed.nix
     ./modules/terminal/kitty.nix
     ./modules/terminal/tmux.nix
-    ./modules/desktop/kde.nix
-    # ./modules/desktop/niri.nix
-    # ./modules/desktop/waybar.nix
-    # ./modules/desktop/mako.nix
-    # ./modules/desktop/fuzzel.nix
-    # ./modules/scripts/default.nix
+    ./modules/configs.nix
   ];
 
   home = {
@@ -32,60 +21,42 @@
       btop
       nano
       stow
-
       cifs-utils
+      lazygit
+
       # Development
       python313
       nodejs_24
       uv
       ripgrep
       fd
-      lazygit
-      # emacs
-      home-manager
-      # Wayland tools
+      helix
+
+      # Wayland / screenshot tools
       wl-clipboard
       wl-clipboard-x11
       grim
       slurp
       swappy
 
-      # Media & System controls
+      # Media & system controls
       playerctl
       brightnessctl
       pavucontrol
-      home-manager
-      # Wallpaper tools
-      # swaybg
-      # swaylock
 
-      # Fonts
-      nerd-fonts.jetbrains-mono
-      nerd-fonts.fira-code
-      noto-fonts
-      noto-fonts-color-emoji
-      lilex
-      liberation_ttf
-      font-awesome
+      # Desktop shell
+      noctalia-shell
     ];
 
     sessionVariables = {
-      EDITOR = "emacsclient -c -a emacs";
-      VISUAL = "emacsclient -c -a emacs";
+      EDITOR = "nano";
+      VISUAL = "zed";
       TERMINAL = "kitty";
-      PATH = "$HOME/.local/bin:$HOME/.emacs.d/bin:$PATH";
       CARGO_HOME = "$HOME/.cargo";
+      PATH = "$HOME/.local/bin:$PATH";
     };
   };
 
-  # Global Catppuccin theme
-  catppuccin = {
-    enable = true;
-    flavor = "mocha"; # Change to "latte" for light theme
-    accent = "blue";
-  };
-
-  # XDG directories
   xdg = {
     enable = true;
     userDirs = {
