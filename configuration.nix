@@ -17,7 +17,7 @@
   ];
 
   networking.firewall.enable = true;
-  services.openssh.enable = true;
+  # services.openssh.enable = true;  # enable only if you need to SSH into this machine
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Do NOT change this value

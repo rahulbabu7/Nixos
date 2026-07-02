@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports = [
@@ -44,8 +44,8 @@
       brightnessctl
       pavucontrol
 
-      # Desktop shell
-      noctalia-shell
+      # Desktop shell — installed from noctalia flake (newer than nixpkgs)
+      inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
 
     sessionVariables = {
