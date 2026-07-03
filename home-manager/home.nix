@@ -20,9 +20,7 @@
       fastfetch
       btop
       nano
-      stow
       cifs-utils
-      lazygit
 
       # Development
       python313
