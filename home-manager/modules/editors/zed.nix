@@ -1,5 +1,8 @@
 { pkgs, ... }:
 
 {
-  home.packages = [ pkgs.unstable.zed-editor ];
+  home.packages = with pkgs; [ 
+    unstable.zed-editor
+    unstable.claude-code
+  ];
 }

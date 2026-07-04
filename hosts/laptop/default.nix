@@ -5,7 +5,7 @@
   imports = [
     ./hardware-configuration.nix
     ../../modules/nvidia.nix
-    ./secureboot-windows.nix
+    # ./secureboot-windows.nix
   ];
 
   
