@@ -3,10 +3,11 @@
 {
   programs.git = {
     enable = true;
-    userName = "rahulbabu7";
-    userEmail = "rahulbabu436@gmail.com";
+    
 
-    extraConfig = {
+    settings = {
+      user.name = "rahulbabu7";
+      user.email = "rahulbabu436@gmail.com";
       init.defaultBranch = "main";
       core = {
         editor = "nano";

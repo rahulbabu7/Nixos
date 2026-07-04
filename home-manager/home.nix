@@ -48,7 +48,7 @@
       # File manager
       nautilus
 
-
+      
     ];
 
     sessionVariables = {
