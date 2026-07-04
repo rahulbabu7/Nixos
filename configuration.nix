@@ -14,6 +14,7 @@
     ./modules/git.nix
     ./modules/users.nix
     ./modules/fonts.nix
+    ./modules/storage-mount.nix
   ];
 
   networking.firewall.enable = true;

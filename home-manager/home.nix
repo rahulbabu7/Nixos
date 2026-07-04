@@ -21,6 +21,7 @@
       btop
       nano
       cifs-utils
+      gvfs
 
       # Development
       python313
