@@ -45,6 +45,10 @@
       # Desktop shell
       noctalia-shell
 
+      # File manager
+      nautilus
+
+
     ];
 
     sessionVariables = {

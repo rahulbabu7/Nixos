@@ -8,6 +8,10 @@
   # Display manager
   services.displayManager.ly.enable = true;
 
+  #gnome ssh issue
+  services.gnome.gcr-ssh-agent.enable= false;
+
+  
   # Touchpad support
   services.libinput.enable = true;
 
