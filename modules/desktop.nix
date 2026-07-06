@@ -11,7 +11,7 @@
   #gnome ssh issue
   services.gnome.gcr-ssh-agent.enable= false;
 
-  
+
   # Touchpad support
   services.libinput.enable = true;
 
@@ -20,6 +20,7 @@
     enable = true;
     extraPortals = with pkgs; [
       xdg-desktop-portal-gtk
+      xdg-desktop-portal-gnome
     ];
   };
 

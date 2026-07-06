@@ -22,6 +22,7 @@
       nano
       cifs-utils
       gvfs
+      glib
 
       # Development
       python313
