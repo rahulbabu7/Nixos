@@ -35,9 +35,9 @@
       # Wayland / screenshot tools
       wl-clipboard
       wl-clipboard-x11
-      grim
-      slurp
-      swappy
+      # grim
+      # slurp
+      # swappy
 
       # Media & system controls
       playerctl
