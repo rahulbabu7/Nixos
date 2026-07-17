@@ -50,7 +50,14 @@
       # File manager
       nautilus
 
-      
+      wireshark
+
+      unzip
+
+      onlyoffice-desktopeditors
+
+      xwayland-satellite
+
     ];
 
     sessionVariables = {
@@ -79,4 +86,5 @@
   };
 
   programs.home-manager.enable = true;
+
 }
