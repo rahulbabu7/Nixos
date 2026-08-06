@@ -36,7 +36,7 @@
       lg  = "lazygit";
 
       # Editor
-      z = "zed";
+      z = "zeditor";
 
       # System
       cpu     = "btop";

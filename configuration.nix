@@ -15,6 +15,7 @@
     ./modules/users.nix
     ./modules/fonts.nix
     ./modules/storage-mount.nix
+    ./modules/podman.nix
   ];
 
   networking.firewall.enable = true;
